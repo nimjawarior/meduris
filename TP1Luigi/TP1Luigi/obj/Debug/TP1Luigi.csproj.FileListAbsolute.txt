@@ -7,3 +7,12 @@ C:\Users\eluig\OneDrive - Collège de Bois-de-Boulogne\Cejep All Files\Technique
 C:\Users\eluig\OneDrive - Collège de Bois-de-Boulogne\Cejep All Files\Technique\Session 4\C# Dev Graph\TP1\TP1Luigi\TP1Luigi\obj\Debug\TP1Luigi.exe
 C:\Users\eluig\OneDrive - Collège de Bois-de-Boulogne\Cejep All Files\Technique\Session 4\C# Dev Graph\TP1\TP1Luigi\TP1Luigi\obj\Debug\TP1Luigi.pdb
 C:\Users\eluig\OneDrive - Collège de Bois-de-Boulogne\Cejep All Files\Technique\Session 4\C# Dev Graph\TP1\TP1Luigi\TP1Luigi\obj\Debug\TP1Luigi.csprojAssemblyReference.cache
+C:\Users\eluig\OneDrive\Documents\GitHub\meduris\TP1Luigi\TP1Luigi\bin\Debug\TP1Luigi.exe.config
+C:\Users\eluig\OneDrive\Documents\GitHub\meduris\TP1Luigi\TP1Luigi\bin\Debug\TP1Luigi.exe
+C:\Users\eluig\OneDrive\Documents\GitHub\meduris\TP1Luigi\TP1Luigi\bin\Debug\TP1Luigi.pdb
+C:\Users\eluig\OneDrive\Documents\GitHub\meduris\TP1Luigi\TP1Luigi\obj\Debug\TP1Luigi.csprojAssemblyReference.cache
+C:\Users\eluig\OneDrive\Documents\GitHub\meduris\TP1Luigi\TP1Luigi\obj\Debug\TP1Luigi.Form1.resources
+C:\Users\eluig\OneDrive\Documents\GitHub\meduris\TP1Luigi\TP1Luigi\obj\Debug\TP1Luigi.Properties.Resources.resources
+C:\Users\eluig\OneDrive\Documents\GitHub\meduris\TP1Luigi\TP1Luigi\obj\Debug\TP1Luigi.csproj.GenerateResource.cache
+C:\Users\eluig\OneDrive\Documents\GitHub\meduris\TP1Luigi\TP1Luigi\obj\Debug\TP1Luigi.exe
+C:\Users\eluig\OneDrive\Documents\GitHub\meduris\TP1Luigi\TP1Luigi\obj\Debug\TP1Luigi.pdb
