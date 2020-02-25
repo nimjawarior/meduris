@@ -6,7 +6,7 @@ namespace TP1Luigi
     static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// Point d entree du programme
         /// </summary>
         [STAThread]
         static void Main()
