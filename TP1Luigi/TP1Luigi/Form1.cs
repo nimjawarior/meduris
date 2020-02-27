@@ -7,32 +7,32 @@ namespace TP1Luigi
     {
         public Form1()
         {
+            Joueur[] tabJoueurs = new Joueur[3];
             InitializeComponent();
-            GameState gameState = new GameState();
+            GameState gameState = new GameState(tabJoueurs);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb((int)tabJoueurs[0].getRRgb(tabJoueurs[0]), (int)tabJoueurs[0].getGRgb(tabJoueurs[0]), (int)tabJoueurs[0].getBRgb(tabJoueurs[0]));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb((int)tabJoueurs[1].getRRgb(tabJoueurs[1]), (int)tabJoueurs[1].getGRgb(tabJoueurs[1]), (int)tabJoueurs[1].getBRgb(tabJoueurs[1]));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb((int)tabJoueurs[2].getRRgb(tabJoueurs[2]), (int)tabJoueurs[2].getGRgb(tabJoueurs[2]), (int)tabJoueurs[2].getBRgb(tabJoueurs[2]));
             gameState.GamePlay();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
     public class GameState
     {
         int tour = 0;
-        Joueur[] tabJoueurs = new Joueur[3];
+        Joueur[] tabTempJoueurs = new Joueur[3];
         Cases[] ensembleCases = new Cases[32];
         Label label1 = new Label();
         ListBox listBox1 = new ListBox();
         Button button1 = new Button();
         Form formChoix = new Form();
 
-        public GameState()
+        public GameState(Joueur[] tabJoueurs)
         {
-            InitialiseJeu();
+            InitialiseJeu(tabJoueurs);
         }
 
-        private void InitialiseJeu()
+        private void InitialiseJeu(Joueur[] tabJoueurs)
         {
             int j = 0;
             for (int i = 0; i < 3; i++)
@@ -66,7 +66,7 @@ namespace TP1Luigi
                 button1.TabIndex = 2;
                 button1.Text = "Confirmer";
                 button1.UseVisualStyleBackColor = true;
-                button1.Click += new System.EventHandler(this.Button1_Click);
+                button1.Click += new EventHandler(this.Button1_Click);
                 button1.Text = "OK";
 
                 formChoix.ClientSize = new System.Drawing.Size(347, 310);
@@ -84,18 +84,40 @@ namespace TP1Luigi
                 j++;
             }
             InitialiserRessourcesParCases();
+            tour = 0;
+            tabJoueurs[0] = tabTempJoueurs[0];
+            tabJoueurs[1] = tabTempJoueurs[1];
+            tabJoueurs[2] = tabTempJoueurs[2];
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            Couleur couleur;
             for (int i = 0; i < listBox1.SelectedItems.Count; i++)
             {
-                string option = listBox1.SelectedItems[i].ToString();
+                String option = listBox1.SelectedItems[i].ToString();
+                switch (option)
+                {
+                    case "Rouge":
+                        tabTempJoueurs[tour] = new Joueur(couleur = new Couleur(192, 0, 0));
+                        break;
+                    case "Vert Clair":
+                        tabTempJoueurs[tour] = new Joueur(couleur = new Couleur(128, 255, 128));
+                        break;
+                    case "Violet":
+                        tabTempJoueurs[tour] = new Joueur(couleur = new Couleur(128, 128, 255));
+                        break;
+                    case "Bleu":
+                        tabTempJoueurs[tour] = new Joueur(couleur = new Couleur(0, 191, 255));
+                        break;
+                }
+                tour++;
                 listBox1.Items.Remove(option);
-                tabJoueurs[0] = new Joueur(option);
                 formChoix.Close();
             }
+
         }
+        
 
         private void InitialiserRessourcesParCases()//Cases cases
         {
@@ -166,14 +188,13 @@ namespace TP1Luigi
     }
     public class Joueur
     {
-        //Couleur couleur;
-        String couleur;
+        Couleur couleur;
         int[] ressources = new int[4];
         int templesDisponibles = 2;
         int huttesDisponibles = 8;
         int Pointage = 5;
-        //public Joueur(Couleur couleur)
-        public Joueur(String couleur)
+
+        public Joueur(Couleur couleur)
         {
             this.couleur = couleur;
             ressources[0] = 1;
@@ -181,8 +202,21 @@ namespace TP1Luigi
             ressources[2] = 1;
             ressources[3] = 1;
         }
+
+        public float getRRgb(Joueur joueur)
+        {
+            return couleur.GetRRgb(joueur);
+        }
+        public float getGRgb(Joueur joueur)
+        {
+            return couleur.GetGRgb(joueur);
+        }
+        public float getBRgb(Joueur joueur)
+        {
+            return couleur.GetBRgb(joueur);
+        }
     }
-    /*
+
     public struct Couleur
     {
         float r;
@@ -194,7 +228,20 @@ namespace TP1Luigi
             this.r = r;
             this.g = g;
             this.b = b;
+
+        }
+
+        public float GetRRgb(Joueur joueur)
+        {
+            return r;
+        }
+        public float GetGRgb(Joueur joueur)
+        {
+            return g;
+        }
+        public float GetBRgb(Joueur joueur)
+        {
+            return b;
         }
     }
-    */
 }
